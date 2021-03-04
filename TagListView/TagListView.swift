@@ -393,8 +393,8 @@ open class TagListView: UIView {
     open func addTagViews(_ tagViewList: [TagView]) -> [TagView] {
         defer { rearrangeViews() }
         tagViewList.forEach {
-            tagView.addTarget(self, action: #selector(tagPressed(_:)), for: .touchUpInside)
-            tagView.removeButton.addTarget(self, action: #selector(removeButtonPressed(_:)), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(tagPressed(_:)), for: .touchUpInside)
+            $0.removeButton.addTarget(self, action: #selector(removeButtonPressed(_:)), for: .touchUpInside)
             tagViews.append($0)
             tagBackgroundViews.append(UIView(frame: $0.bounds))
         }
